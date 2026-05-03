@@ -19,6 +19,7 @@ export interface RenderResult {
   content: string;
   missingVariables: string[];
   success: boolean;
+  errorMessage?: string;
 }
 
 /**
@@ -29,7 +30,9 @@ export interface BatchRenderResult {
   total: number;
   successCount: number;
   failureCount: number;
+  skippedCount?: number;
   allMissingVariables: string[];
+  skippedRecipients?: number[];
 }
 
 /**
