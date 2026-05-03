@@ -20,7 +20,7 @@ const validator = new DataValidator();
 /**
  * 读取文件内容，带错误处理
  */
-function readFile(filePath: string): string {
+export function readFile(filePath: string): string {
   if (!filePath || typeof filePath !== 'string') {
     console.error(chalk.red('❌ 文件路径无效'));
     process.exit(1);
@@ -67,7 +67,7 @@ function readFile(filePath: string): string {
 /**
  * 解析 JSON 文件，带错误处理和详细提示
  */
-function parseJsonFile<T>(filePath: string): T {
+export function parseJsonFile<T>(filePath: string): T {
   const content = readFile(filePath);
   
   if (content.trim() === '') {
